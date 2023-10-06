@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     vermais.addEventListener('click', () => {
         vermais.classList.remove('active')
         vermenos.classList.add('active')
-        texto.style.maxHeight = panel.scrollHeight + 'px';
+        texto.style.maxHeight = (panel.scrollHeight + 20) + 'px';
     })
 
 

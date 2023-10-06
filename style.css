@@ -1,19 +1,13 @@
 .text-seo {
-    max-height: 100px;
+    padding: 1.2rem 1.2rem;
+    max-height: 70px;
     overflow: hidden;
-    background-color: rgb(173, 199, 140);
+    background-color: rgb(255, 255, 255);
     transition: max-height 0.8s ease-out;
-    /* box-shadow: inset 0px -20px 10px 30px rgba(241, 26, 26, 0.87); */
-
+    text-align: justify;
 }
 
-.text-seo::before {
-    content: '';
-    position: static;
-    padding: 25px;
-    background-color: aqua;
 
-}
 
 .vermais,
 .vermenos {
