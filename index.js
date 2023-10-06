@@ -1,39 +1,40 @@
 //[x]pegar o primeiro p e inserir o leia mais
-//[] definir o texto pelo tamanho da tag p, ocultar o resto
-//[] quando clicar inserir o ver menos no final de todo o texto
-//[] quando clicar remover o leia mais do texto
+//[x] definir o texto pelo tamanho da tag p, ocultar o resto
+//[x] quando clicar inserir o ver menos no final de todo o texto
+//[x] quando clicar remover o leia mais do texto
+
 
 document.addEventListener('DOMContentLoaded', function () {
-    var panel = document.querySelector('.text-seo')
-    let texto = document.querySelector('.text-seo')
-    let primeiroP = texto.firstElementChild
-    console.log(primeiroP)
+    var larguraTela = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var texto = document.querySelector('.board_htm');
+    let primeiroP = texto.querySelector('p');
+
     if (primeiroP) {
-        console.log(primeiroP.innerHTML)
-        let conteudo = ` ${primeiroP.innerHTML} '<button class='vermais active'><b>leia mais...</b></button></p>`
-        primeiroP.innerHTML = conteudo
+        var conteudo = primeiroP.innerHTML + "<button class='vermais active'><b>leia mais...</b></button></p>";
+        primeiroP.innerHTML = conteudo;
     }
 
-    var vermenos = this.createElement('button')
-    vermenos.className += 'vermenos'
-    vermenos.innerHTML = '<b>ler menos</b>'
-    texto.appendChild(vermenos)
+    var vermenos = document.createElement('button');
+    vermenos.className = 'vermenos';
+    vermenos.innerHTML = '<b>leia menos</b>';
+    texto.appendChild(vermenos);
 
+    vermenos.addEventListener('click', function () {
+        vermais.classList.add('active');
+        vermenos.classList.remove('active');
 
-    vermenos.addEventListener('click', () => {
-        vermais.classList.add('active')
-        vermenos.classList.remove('active')
-        texto.style.maxHeight = '100px'
+        if (larguraTela >= 768) {
+            texto.style.maxHeight = '130px';
+        } else {
+            texto.style.maxHeight = '195px';
+        }
+    });
 
-    })
-
-    var vermais = document.querySelector(".vermais")
-    vermais.addEventListener('click', () => {
-        vermais.classList.remove('active')
-        vermenos.classList.add('active')
-        texto.style.maxHeight = (panel.scrollHeight + 20) + 'px';
-    })
-
-
-})
+    var vermais = document.querySelector(".vermais");
+    vermais.addEventListener('click', function () {
+        vermais.classList.remove('active');
+        vermenos.classList.add('active');
+        texto.style.maxHeight = texto.scrollHeight + 20 + 'px';
+    });
+});
 

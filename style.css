@@ -1,13 +1,11 @@
-.text-seo {
+.board_htm {
     padding: 1.2rem 1.2rem;
-    max-height: 70px;
+    max-height: 130px;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
     transition: max-height 0.8s ease-out;
     text-align: justify;
 }
-
-
 
 .vermais,
 .vermenos {
@@ -18,10 +16,27 @@
     font-weight: 500;
     padding: 0px 15px;
     display: none;
+}
 
+.active:hover b {
+    color: #337ab7;
 }
 
 .active {
     /* background-color: red; */
     display: inline;
+}
+
+/* Estilos para telas de desktop */
+@media screen and (min-width: 768px) {
+    .board_htm {
+        max-height: 130px;
+    }
+}
+
+/* Estilos para telas de dispositivos móveis */
+@media screen and (max-width: 767px) {
+    .board_htm {
+        max-height: 195px;
+    }
 }
